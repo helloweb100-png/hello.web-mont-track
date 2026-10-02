@@ -407,11 +407,15 @@
                 <div class="catalog__track" id="catalog-track" tabindex="0" aria-label="Catálogo de productos, desplázate horizontalmente">
 
                     <!-- 01 Montacargas -->
-                    <article class="pcard" style="--c:#FFC918" data-tilt>
+                    <article class="pcard" style="--c:#FFC918" data-tilt data-cat-card role="button" tabindex="0" aria-label="Ver los diferentes montacargas que manejamos" data-cursor="Ver equipos">
                         <div class="pcard__media">
                             <img class="pcard__img pcard__img--a" src="img/web/montacargas-fondo-oscuro.webp" alt="Montacargas Hyster amarillo con uñas rojas sobre fondo oscuro, equipo de Montrack" width="1200" height="900" loading="lazy" decoding="async" style="height:122%;object-position:50% 0%">
                             <img class="pcard__img pcard__img--b" src="img/web/montacargas-electricos-tradicionales.webp" alt="Montacargas Montrack eléctricos o tradicionales en un almacén con racks" width="1080" height="1080" loading="lazy" decoding="async">
                         </div>
+                        <ul class="pcard__gallery" hidden>
+                            <li><img src="img/web/montacargas-gas-heli-25.webp" alt="Montacargas a gas Heli 2.5 ton con tanque de gas LP, equipo Montrack" data-cap="Montacargas a gas · 2.5 ton"></li>
+                            <li><img src="img/web/montacargas-electrico-reach-heli.webp" alt="Montacargas eléctrico reach Heli rojo en nave industrial" data-cap="Montacargas eléctrico reach"></li>
+                        </ul>
                         <div class="pcard__shade"></div>
                         <header class="pcard__top"><span class="pcard__num">01</span><span class="pcard__tag">Nuevos · Seminuevos</span></header>
                         <div class="pcard__body">
@@ -419,16 +423,22 @@
                             <h3 class="pcard__title">Montacargas</h3>
                             <p class="pcard__desc">Potencia para elevar y trasladar cargas pesadas en naves, patios y centros de distribución.</p>
                             <ul class="pcard__specs"><li>Eléctricos</li><li>Tradicionales</li><li>Nuevos y seminuevos</li></ul>
-                            <a class="pcard__cta" href="#contacto" data-quote="Montacargas"><span>Cotizar montacargas</span><i class="ph-bold ph-arrow-up-right" aria-hidden="true"></i></a>
+                            <p class="pcard__hint"><i class="ph-bold ph-images" aria-hidden="true"></i>Ver los equipos que manejamos</p>
+                            <a class="pcard__cta" href="#contacto" data-quote="Montacargas" data-cursor="Cotizar"><span>Cotizar montacargas</span><i class="ph-bold ph-arrow-up-right" aria-hidden="true"></i></a>
                         </div>
                     </article>
 
                     <!-- 02 Apiladores -->
-                    <article class="pcard" style="--c:#FF6A1A" data-tilt>
+                    <article class="pcard" style="--c:#FF6A1A" data-tilt data-cat-card role="button" tabindex="0" aria-label="Ver los diferentes apiladores que manejamos" data-cursor="Ver equipos">
                         <div class="pcard__media">
                             <img class="pcard__img pcard__img--a" src="img/web/apilador-electrico-1600kg-bodega.webp" alt="Apilador eléctrico Montrack de 1,600 kg naranja con negro dentro de la bodega" width="1079" height="1437" loading="lazy" decoding="async" style="height:128%;object-position:50% 0%">
                             <img class="pcard__img pcard__img--b" src="img/web/apilador-manual-almacen-racks.webp" alt="Apilador manual hidráulico naranja entre racks de un almacén" width="1079" height="1437" loading="lazy" decoding="async" style="height:128%;object-position:50% 30%">
                         </div>
+                        <ul class="pcard__gallery" hidden>
+                            <li><img src="img/web/apilador-manual-operador-epp.webp" alt="Operador con equipo de protección usando un apilador manual Montrack" data-cap="Apilador manual"></li>
+                            <li><img src="img/web/apilador-semielectrico-montrack.webp" alt="Apilador semieléctrico Montrack naranja y negro en bodega" data-cap="Apilador semieléctrico"></li>
+                            <li><img src="img/web/apilador-electrico-bodega-cajas.webp" alt="Apilador eléctrico Montrack envuelto, listo para entrega, entre racks con cajas" data-cap="Apilador eléctrico"></li>
+                        </ul>
                         <div class="pcard__shade"></div>
                         <header class="pcard__top"><span class="pcard__num">02</span><span class="pcard__tag">Nuevos · Seminuevos</span></header>
                         <div class="pcard__body">
@@ -436,16 +446,20 @@
                             <h3 class="pcard__title">Apiladores</h3>
                             <p class="pcard__desc">Eleva y estiba tarimas con precisión y sin esfuerzo: eléctricos de 1,000 y 1,600 kg, y manuales hidráulicos.</p>
                             <ul class="pcard__specs"><li>1,000 kg</li><li>1,600 kg</li><li>Manual hidráulico</li></ul>
-                            <a class="pcard__cta" href="#contacto" data-quote="Apiladores"><span>Cotizar apiladores</span><i class="ph-bold ph-arrow-up-right" aria-hidden="true"></i></a>
+                            <p class="pcard__hint"><i class="ph-bold ph-images" aria-hidden="true"></i>Ver los equipos que manejamos</p>
+                            <a class="pcard__cta" href="#contacto" data-quote="Apiladores" data-cursor="Cotizar"><span>Cotizar apiladores</span><i class="ph-bold ph-arrow-up-right" aria-hidden="true"></i></a>
                         </div>
                     </article>
 
                     <!-- 03 Patín hidráulico -->
-                    <article class="pcard" style="--c:#FF9A1A" data-tilt>
+                    <article class="pcard" style="--c:#FF9A1A" data-tilt data-cat-card role="button" tabindex="0" aria-label="Ver los diferentes patines hidráulicos que manejamos" data-cursor="Ver equipos">
                         <div class="pcard__media">
                             <img class="pcard__img pcard__img--a" src="img/web/patin-hidraulico-almacen.webp" alt="Patín hidráulico naranja de Montrack en un pasillo de almacén con racks" width="1536" height="1024" loading="lazy" decoding="async" style="height:122%;object-position:34% 0%">
                             <img class="pcard__img pcard__img--b" src="img/web/patin-hidraulico-naranja-estudio.webp" alt="Patín hidráulico naranja Montrack visto de lado sobre piso industrial" width="1080" height="1080" loading="lazy" decoding="async" style="object-position:40% 55%">
                         </div>
+                        <ul class="pcard__gallery" hidden>
+                            <li><img src="img/web/patin-hidraulico-naranja-3000kg.webp" alt="Patín hidráulico naranja Montrack de 3,000 kg en bodega" data-cap="Patín hidráulico · 3,000 kg"></li>
+                        </ul>
                         <div class="pcard__shade"></div>
                         <header class="pcard__top"><span class="pcard__num">03</span><span class="pcard__tag">Uso diario</span></header>
                         <div class="pcard__body">
@@ -453,15 +467,20 @@
                             <h3 class="pcard__title">Patín hidráulico</h3>
                             <p class="pcard__desc">El aliado indispensable de toda bodega: traslada tarimas con mínimo esfuerzo y máxima durabilidad.</p>
                             <ul class="pcard__specs"><li>Maniobrable</li><li>Resistente</li><li>Uso intensivo</li></ul>
-                            <a class="pcard__cta" href="#contacto" data-quote="Patín hidráulico"><span>Cotizar patín</span><i class="ph-bold ph-arrow-up-right" aria-hidden="true"></i></a>
+                            <p class="pcard__hint"><i class="ph-bold ph-images" aria-hidden="true"></i>Ver los equipos que manejamos</p>
+                            <a class="pcard__cta" href="#contacto" data-quote="Patín hidráulico" data-cursor="Cotizar"><span>Cotizar patín</span><i class="ph-bold ph-arrow-up-right" aria-hidden="true"></i></a>
                         </div>
                     </article>
 
                     <!-- 04 Racks -->
-                    <article class="pcard" style="--c:#7DA6FF" data-tilt>
+                    <article class="pcard" style="--c:#7DA6FF" data-tilt data-cat-card role="button" tabindex="0" aria-label="Ver los diferentes racks industriales que manejamos" data-cursor="Ver equipos">
                         <div class="pcard__media">
                             <img class="pcard__img pcard__img--a" src="img/web/racks-industriales.webp" alt="Racks industriales azules y naranjas de alta resistencia en un almacén" width="1200" height="896" loading="lazy" decoding="async" style="height:160%;top:-30%;object-position:100% 50%">
                         </div>
+                        <ul class="pcard__gallery" hidden>
+                            <li><img src="img/web/racks-industriales-rojo-negro-cajas.webp" alt="Racks industriales rojos y negros cargados de cajas en almacén" data-cap="Racks industriales con carga"></li>
+                            <li><img src="img/web/racks-industriales-azul-naranja-alto.webp" alt="Racks industriales azules y naranjas de gran altura en nave" data-cap="Racks industriales de gran altura"></li>
+                        </ul>
                         <div class="pcard__shade"></div>
                         <header class="pcard__top"><span class="pcard__num">04</span><span class="pcard__tag">Alta resistencia</span></header>
                         <div class="pcard__body">
@@ -469,12 +488,13 @@
                             <h3 class="pcard__title">Racks industriales</h3>
                             <p class="pcard__desc">Sistemas de almacenamiento de alta resistencia para ordenar tu inventario y aprovechar cada metro de tu nave.</p>
                             <ul class="pcard__specs"><li>Alta resistencia</li><li>Más capacidad</li><li>Mejor orden</li></ul>
-                            <a class="pcard__cta" href="#contacto" data-quote="Racks industriales"><span>Cotizar racks</span><i class="ph-bold ph-arrow-up-right" aria-hidden="true"></i></a>
+                            <p class="pcard__hint"><i class="ph-bold ph-images" aria-hidden="true"></i>Ver los equipos que manejamos</p>
+                            <a class="pcard__cta" href="#contacto" data-quote="Racks industriales" data-cursor="Cotizar"><span>Cotizar racks</span><i class="ph-bold ph-arrow-up-right" aria-hidden="true"></i></a>
                         </div>
                     </article>
 
                     <!-- 05 Mesas elevadoras -->
-                    <article class="pcard" style="--c:#7DA6FF" data-tilt>
+                    <article class="pcard" style="--c:#7DA6FF" data-tilt data-cat-card role="button" tabindex="0" aria-label="Ver las mesas elevadoras que manejamos" data-cursor="Ver equipos">
                         <div class="pcard__media">
                             <img class="pcard__img pcard__img--a" src="img/web/mesa-elevadora-tijera.webp" alt="Mesa elevadora de tijera hidráulica con plataforma azul y estructura amarilla" width="1200" height="900" loading="lazy" decoding="async" style="height:142%;object-position:30% 0%">
                         </div>
@@ -485,15 +505,19 @@
                             <h3 class="pcard__title">Mesas elevadoras</h3>
                             <p class="pcard__desc">Lleva la carga a la altura ideal de trabajo con una plataforma robusta y sistema hidráulico de tijera.</p>
                             <ul class="pcard__specs"><li>Tijera hidráulica</li><li>Plataforma robusta</li><li>Ergonomía</li></ul>
-                            <a class="pcard__cta" href="#contacto" data-quote="Mesas elevadoras"><span>Cotizar mesas</span><i class="ph-bold ph-arrow-up-right" aria-hidden="true"></i></a>
+                            <p class="pcard__hint"><i class="ph-bold ph-images" aria-hidden="true"></i>Ver los equipos que manejamos</p>
+                            <a class="pcard__cta" href="#contacto" data-quote="Mesas elevadoras" data-cursor="Cotizar"><span>Cotizar mesas</span><i class="ph-bold ph-arrow-up-right" aria-hidden="true"></i></a>
                         </div>
                     </article>
 
                     <!-- 06 Escaleras -->
-                    <article class="pcard" style="--c:#7DA6FF" data-tilt>
+                    <article class="pcard" style="--c:#7DA6FF" data-tilt data-cat-card role="button" tabindex="0" aria-label="Ver las diferentes escaleras de acceso que manejamos" data-cursor="Ver equipos">
                         <div class="pcard__media">
                             <img class="pcard__img pcard__img--a" src="img/web/escalera-de-acceso-almacen.webp" alt="Escalera de acceso móvil azul con barandales y rodajas para almacén" width="1200" height="900" loading="lazy" decoding="async" style="height:128%;top:-26%;object-position:55% 100%">
                         </div>
+                        <ul class="pcard__gallery" hidden>
+                            <li><img src="img/web/escalera-industrial-azul-almacen.webp" alt="Escalera industrial azul a la medida con plataforma, fabricada por Montrack" data-cap="Escalera industrial a la medida"></li>
+                        </ul>
                         <div class="pcard__shade"></div>
                         <header class="pcard__top"><span class="pcard__num">06</span><span class="pcard__tag">Acceso seguro</span></header>
                         <div class="pcard__body">
@@ -501,12 +525,13 @@
                             <h3 class="pcard__title">Escaleras de acceso</h3>
                             <p class="pcard__desc">Escaleras móviles con barandales y rodajas para alcanzar tu inventario en altura con seguridad.</p>
                             <ul class="pcard__specs"><li>Barandales</li><li>Con rodajas</li><li>Acceso seguro</li></ul>
-                            <a class="pcard__cta" href="#contacto" data-quote="Escaleras de acceso"><span>Cotizar escaleras</span><i class="ph-bold ph-arrow-up-right" aria-hidden="true"></i></a>
+                            <p class="pcard__hint"><i class="ph-bold ph-images" aria-hidden="true"></i>Ver los equipos que manejamos</p>
+                            <a class="pcard__cta" href="#contacto" data-quote="Escaleras de acceso" data-cursor="Cotizar"><span>Cotizar escaleras</span><i class="ph-bold ph-arrow-up-right" aria-hidden="true"></i></a>
                         </div>
                     </article>
 
                     <!-- 07 Tarimas -->
-                    <article class="pcard" style="--c:#7DA6FF" data-tilt>
+                    <article class="pcard" style="--c:#7DA6FF" data-tilt data-cat-card role="button" tabindex="0" aria-label="Ver las tarimas y pallets que manejamos" data-cursor="Ver equipos">
                         <div class="pcard__media">
                             <img class="pcard__img pcard__img--a" src="img/web/tarimas-pallets-plasticos.webp" alt="Tarimas y pallets plásticos azul y blanco dentro de un almacén con racks" width="1200" height="900" loading="lazy" decoding="async" style="height:150%;top:-46%;object-position:42% 100%">
                         </div>
@@ -517,16 +542,20 @@
                             <h3 class="pcard__title">Tarimas y pallets</h3>
                             <p class="pcard__desc">Tarimas y pallets plásticos resistentes y reutilizables para almacenar y transportar con orden.</p>
                             <ul class="pcard__specs"><li>Plástico industrial</li><li>Reutilizables</li><li>Fáciles de limpiar</li></ul>
-                            <a class="pcard__cta" href="#contacto" data-quote="Tarimas y pallets"><span>Cotizar tarimas</span><i class="ph-bold ph-arrow-up-right" aria-hidden="true"></i></a>
+                            <p class="pcard__hint"><i class="ph-bold ph-images" aria-hidden="true"></i>Ver los equipos que manejamos</p>
+                            <a class="pcard__cta" href="#contacto" data-quote="Tarimas y pallets" data-cursor="Cotizar"><span>Cotizar tarimas</span><i class="ph-bold ph-arrow-up-right" aria-hidden="true"></i></a>
                         </div>
                     </article>
 
                     <!-- 08 Transportadores -->
-                    <article class="pcard" style="--c:#FFC918" data-tilt>
+                    <article class="pcard" style="--c:#FFC918" data-tilt data-cat-card role="button" tabindex="0" aria-label="Ver los diferentes transportadores que manejamos" data-cursor="Ver equipos">
                         <div class="pcard__media">
                             <img class="pcard__img pcard__img--a" src="img/web/transportador-rodillos-azul.webp" alt="Transportador de rodillos con estructura azul y caja de cartón" width="1200" height="900" loading="lazy" decoding="async" style="height:128%;object-position:30% 10%">
                             <img class="pcard__img pcard__img--b" src="img/web/transportador-rodillos-proyectos-a-medida.webp" alt="Proyecto a la medida de transportador de rodillos en un centro de distribución" width="1080" height="1350" loading="lazy" decoding="async" style="object-position:50% 20%">
                         </div>
+                        <ul class="pcard__gallery" hidden>
+                            <li><img src="img/web/transportador-rodillos-nuevo-azul.webp" alt="Transportador de rodillos azul nuevo embalado, listo para entrega" data-cap="Transportador de rodillos nuevo"></li>
+                        </ul>
                         <div class="pcard__shade"></div>
                         <header class="pcard__top"><span class="pcard__num">08</span><span class="pcard__tag">A la medida</span></header>
                         <div class="pcard__body">
@@ -534,7 +563,8 @@
                             <h3 class="pcard__title">Transportadores</h3>
                             <p class="pcard__desc">Transportadores de rodillos diseñados a la medida de tu línea. Garantía hasta 12 meses.</p>
                             <ul class="pcard__specs"><li>A la medida</li><li>Rodillos</li><li>Garantía 12 meses</li></ul>
-                            <a class="pcard__cta" href="#contacto" data-quote="Transportadores"><span>Cotizar proyecto</span><i class="ph-bold ph-arrow-up-right" aria-hidden="true"></i></a>
+                            <p class="pcard__hint"><i class="ph-bold ph-images" aria-hidden="true"></i>Ver los equipos que manejamos</p>
+                            <a class="pcard__cta" href="#contacto" data-quote="Transportadores" data-cursor="Cotizar"><span>Cotizar proyecto</span><i class="ph-bold ph-arrow-up-right" aria-hidden="true"></i></a>
                         </div>
                     </article>
 
@@ -857,6 +887,7 @@
                         <li><button class="gal__item" type="button" data-cap="Patín hidráulico entre racks"><img src="img/web/patin-hidraulico-almacen.webp" alt="Patín hidráulico naranja en un pasillo de racks" width="1536" height="1024" loading="lazy" decoding="async"></button></li>
                         <li><button class="gal__item" type="button" data-cap="Apiladores eléctricos"><img src="img/web/apilador-electrico-amarillo.webp" alt="Apilador eléctrico amarillo con mástil negro" width="1200" height="900" loading="lazy" decoding="async"></button></li>
                         <li><button class="gal__item" type="button" data-cap="Transportadores"><img src="img/web/transportador-rodillos-azul.webp" alt="Transportador de rodillos azul con caja" width="1200" height="900" loading="lazy" decoding="async"></button></li>
+                        <li><button class="gal__item" type="button" data-cap="Rampa de andén · Nivelador para carga y descarga"><img src="img/web/rampa-anden-nivelador.webp" alt="Rampa de andén con nivelador metálico instalado en un almacén" width="1100" height="1467" loading="lazy" decoding="async"></button></li>
                     </ul>
                 </div>
             </div>

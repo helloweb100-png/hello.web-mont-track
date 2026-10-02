@@ -934,34 +934,51 @@
     /* ======================================================================
        10. GALERÍA + LIGHTBOX · VIDEO
        ====================================================================== */
+    /* El visor es compartido: la galería lo abre con sus propias fotos y
+       cada tarjeta de producto lo abre con los equipos de su categoría */
     function initLightbox() {
         const dlg = $('#lightbox');
-        const gallery = $('#gallery');
-        if (!dlg || !gallery) return;
+        if (!dlg) return null;
         const img = $('#lb-img');
         const cap = $('#lb-cap');
-        const items = $$('.gal__item', gallery);
-        items.forEach((b, i) => { b.dataset.i = i; b.dataset.cursor = 'Ver'; });
+        const lbCta = $('#lb-cta');
+        let items = [];
         let idx = 0;
+        let activeCat = '';
 
         function show(i) {
+            if (!items.length) return;
             idx = (i + items.length) % items.length;
-            const src = $('img', items[idx]);
+            const it = items[idx];
             img.classList.remove('is-in');
-            img.src = src.currentSrc || src.src;
-            img.alt = src.alt;
-            cap.textContent = items[idx].dataset.cap || src.alt;
+            img.src = it.src;
+            img.alt = it.alt;
+            cap.textContent = it.cap || it.alt;
             if (img.complete) img.classList.add('is-in');
         }
         img.addEventListener('load', () => img.classList.add('is-in'));
 
-        gallery.addEventListener('click', e => {
-            const b = e.target.closest('.gal__item');
-            if (!b) return;
-            show(+b.dataset.i);
+        function open(list, startIdx, cat) {
+            if (!list || !list.length) return;
+            items = list;
+            activeCat = cat || '';
+            show(startIdx || 0);
             if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
             lockScroll('lightbox');
-        });
+        }
+
+        const gallery = $('#gallery');
+        if (gallery) {
+            const galItems = $$('.gal__item', gallery);
+            galItems.forEach((b, i) => { b.dataset.i = i; b.dataset.cursor = 'Ver'; });
+            const toItem = b => { const i = $('img', b); return { src: i.currentSrc || i.src, alt: i.alt, cap: b.dataset.cap || i.alt }; };
+            gallery.addEventListener('click', e => {
+                const b = e.target.closest('.gal__item');
+                if (!b) return;
+                open(galItems.map(toItem), +b.dataset.i, '');
+            });
+        }
+
         dlg.addEventListener('close', () => unlockScroll('lightbox'));
         $('#lb-close').addEventListener('click', () => dlg.close());
         $('#lb-prev').addEventListener('click', () => show(idx - 1));
@@ -979,13 +996,45 @@
             if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
         }, { passive: true });
 
-        $('#lb-cta').addEventListener('click', () => {
+        lbCta.addEventListener('click', () => {
+            if (activeCat) {
+                const select = $('#f-product');
+                if (select) {
+                    const opt = Array.from(select.options).find(o => o.value === activeCat || o.text === activeCat);
+                    if (opt) { select.value = opt.value; select.dispatchEvent(new Event('change', { bubbles: true })); }
+                }
+            }
             const msg = $('#f-msg');
             if (msg && !msg.value.trim()) {
-                msg.value = 'Me interesa el equipo de la imagen: ' + (items[idx].dataset.cap || '');
+                msg.value = 'Me interesa el equipo de la imagen: ' + (items[idx] ? items[idx].cap : '');
                 msg.dispatchEvent(new Event('input', { bubbles: true }));
             }
             dlg.close();
+        });
+
+        return { open };
+    }
+
+    /* Tarjetas de producto del catálogo: al hacer clic muestran, en el mismo
+       visor, los diferentes equipos de esa categoría (fotos del catálogo +
+       variantes reales que el cliente comparte en cada línea) */
+    function initCategoryGallery(lightbox) {
+        if (!lightbox) return;
+        $$('.pcard[data-cat-card]').forEach(card => {
+            const ctaLink = $('.pcard__cta', card);
+            const cat = ctaLink ? ctaLink.dataset.quote : '';
+            const imgs = $$('.pcard__media .pcard__img, .pcard__gallery img', card);
+            const items = imgs.map(im => ({ src: im.src, alt: im.alt, cap: im.dataset.cap || im.alt }));
+            const openGallery = () => lightbox.open(items, 0, cat);
+
+            card.addEventListener('click', e => {
+                if (e.target.closest('a')) return;
+                openGallery();
+            });
+            card.addEventListener('keydown', e => {
+                if (e.target.closest('a')) return;
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openGallery(); }
+            });
         });
     }
 
@@ -1192,7 +1241,8 @@
         initProcess();
         initCounters();
         initParallax();
-        initLightbox();   // antes de los marquees: numera los originales
+        const lightbox = initLightbox();   // antes de los marquees: numera los originales
+        initCategoryGallery(lightbox);
         initMarquees();
         initSectors();
         initFAQ();

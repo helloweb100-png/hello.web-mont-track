@@ -543,7 +543,7 @@ html.menu-open .header::before { opacity: 0; }
     padding-inline: var(--gutter);
 }
 .brand { display: block; margin-right: auto; line-height: 0; }
-.brand img { width: auto; height: 28px; }
+.brand img { width: auto; height: 40px; }
 
 .nav { display: none; }
 .nav__list {
@@ -1227,6 +1227,16 @@ html.is-ready .dots { opacity: 1; }
 .pcard__desc { font-size: .86rem; line-height: 1.45; color: #C2C9D3; }
 .pcard__specs { display: flex; flex-wrap: wrap; gap: .35rem; }
 .pcard__specs li { padding: .22rem .6rem; border: 1px solid var(--line-2); border-radius: 999px; font-size: .66rem; color: var(--txt-2); background: rgba(255, 255, 255, .04); }
+.pcard[data-cat-card] { cursor: pointer; }
+.pcard[data-cat-card]:focus-visible { outline: 2px solid var(--c); outline-offset: 3px; }
+.pcard__hint {
+    display: flex; align-items: center; gap: .4rem;
+    font-size: .72rem; color: var(--txt-2);
+    opacity: .75;
+    transition: opacity .3s, color .3s;
+}
+.pcard__hint i { font-size: .9rem; color: var(--c); }
+.pcard:hover .pcard__hint { opacity: 1; color: #fff; }
 .pcard__cta {
     display: flex; align-items: center; justify-content: space-between;
     margin-top: .4rem;
@@ -1963,7 +1973,7 @@ html.has-cursor .cursor { display: block; }
 @media (min-width: 1024px) {
     :root { --header-h: 76px; }
     .brand { margin-right: 0; }
-    .brand img { height: 32px; }
+    .brand img { height: 46px; }
     .nav { display: block; margin-inline: auto; }
     .header__cta { display: inline-flex; }
     .burger, .menu { display: none; }
