@@ -977,6 +977,16 @@
                 if (!b) return;
                 open(galItems.map(toItem), +b.dataset.i, '');
             });
+            // Enlaces de fuera de la galería (pie de página): abren el visor directo
+            // en esa foto. Si no la encuentra, el href lleva a la imagen misma.
+            document.addEventListener('click', e => {
+                const a = e.target.closest('[data-gal-photo]');
+                if (!a) return;
+                const i = galItems.findIndex(b => $('img', b).getAttribute('src') === a.getAttribute('href'));
+                if (i < 0) return;
+                e.preventDefault();
+                open(galItems.map(toItem), i, a.dataset.galCat || '');
+            });
         }
 
         dlg.addEventListener('close', () => unlockScroll('lightbox'));
