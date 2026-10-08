@@ -1076,6 +1076,13 @@
         }
     }
 
+    function initTourVideo() {
+        const t = $('#tour-video');
+        const promo = $('#promo-video');
+        if (!t || !promo) return;
+        t.addEventListener('play', () => promo.pause());
+    }
+
     /* ======================================================================
        11. FORMULARIO → WHATSAPP
        ====================================================================== */
@@ -1258,6 +1265,7 @@
         initFAQ();
         initSwitch();
         initVideo();
+        initTourVideo();
         initQuoteLinks();
         initForm();
         initCursor();

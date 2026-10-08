@@ -1431,6 +1431,18 @@ html.is-ready .dots { opacity: 1; }
 }
 .showcase__ring { position: absolute; inset: -9%; z-index: -1; border: 1px dashed rgba(255, 201, 24, .32); border-radius: 50%; animation: spin 50s linear infinite; }
 .showcase__ring::after { content: ""; position: absolute; top: 4%; left: 50%; width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; background: var(--y); box-shadow: 0 0 16px var(--y); }
+.tour { margin-top: clamp(3rem, 8vw, 5.5rem); }
+.tour__frame {
+    width: min(100%, 1040px);
+    margin-inline: auto;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border: 1px solid var(--line-2);
+    border-radius: var(--r-l);
+    background: #000;
+    box-shadow: 0 60px 120px -50px rgba(255, 201, 24, .3);
+}
+.tour__video { width: 100%; height: 100%; object-fit: contain; }
 .checks { display: grid; gap: .85rem; margin: 1.8rem 0 2.2rem; }
 .checks li { display: flex; align-items: flex-start; gap: .7rem; color: var(--txt); }
 .checks i { flex: none; margin-top: .1rem; font-size: 1.35rem; color: var(--y); }
